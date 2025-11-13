@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>PricePredictor</title>
+    
+    <style>
+        /* Estilos CSS (Combinados y Organizador) */
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding-left: 10px;
+        }
+
+        header {
+            font-size: 25px;
+        }
+        
+        /* Contenedor del formulario */
+        .center-form {
+            /* Estilos para centrar el formulario */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            /* Estilos adicionales para mejorar la presentación */
+            max-width: 500px; 
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Contenedor genérico para padding */
+        .form-fields {
+            padding-left: 2%;
+            max-width: 100%;
+        }
+        
+        /* Botón de envío */
+        .submit-button {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        /* Texto de la predicción */
+        .center-text {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>House Price Predictor</header>
+
+    <form id="myDialog" method="POST" class="center-form">
+        <input class="submit-button" type="submit" value="Submit"><br><br>
+
+        <div class="form-fields">
+            <label for="fname">Bedrooms:</label><br>
+            <input type="text" id="bedrooms" name="bedrooms" value="3"><br><br>
+
+            <label for="fname">Bathrooms:</label><br>
+            <input type="text" id="bathrooms" name="bathrooms" value="1"><br><br>
+
+            <label for="fname">Living Space (sqft):</label><br>
+            <input type="text" id="sqft_living" name="sqft_living" value="1180"><br><br>
+            
+            <label for="fname">Lot size (sqft):</label><br>
+            <input type="text" id="sqft_lot" name="sqft_lot" value="5650"><br><br>
+
+            <label for="fname">Floors:</label><br>
+            <input type="text" id="floors" name="floors" value="1"><br><br>
+
+            <label for="fname">Waterfront:</label><br>
+            <input type="radio" id="waterfront_yes" name="waterfront" value="1" checked>
+            <label for="waterfront_yes">Yes</label><br>
+            <input type="radio" id="waterfront_no" name="waterfront" value="0">
+            <label for="waterfront_no">No</label><br><br>
+
+            <label for="fname">Condition:</label><br>
+            <input type="radio" id="condition_1" name="condition" value="1" checked>
+            <label for="condition_1">1 - worst</label><br>
+            <input type="radio" id="condition_2" name="condition" value="2">
+            <label for="condition_2">2</label><br>
+            <input type="radio" id="condition_3" name="condition" value="3">
+            <label for="condition_3">3</label><br>
+            <input type="radio" id="condition_4" name="condition" value="4">
+            <label for="condition_4">4</label><br>
+            <input type="radio" id="condition_5" name="condition" value="5">
+            <label for="condition_5">5 - best</label><br>
+        </div>
+
+        <div class="center-text">
+            <br>
+            <p><strong>Estimated Price:</strong></p>
+            <p>{{ prediction }}</p>
+        </div>
+    </form>
+</body>
+</html>
